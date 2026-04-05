@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KLD · attendance system - Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-wrapper">
+        <aside class="sidebar">
+            <div class="logo-area">
+                <i class="fas fa-qrcode"></i>
+                <span>KLD</span>
+            </div>
+            <div class="nav-links" id="sidebarNav">
+                <div class="nav-item" data-page="home"><i class="fas fa-home"></i> Home</div>
+                <div class="nav-item" data-page="login"><i class="fas fa-sign-in-alt"></i> Login</div>
+                <div class="nav-item" data-page="register"><i class="fas fa-user-plus"></i> Register</div>
+                <div class="nav-item" data-page="about"><i class="fas fa-info-circle"></i> About</div>
+                <div style="height:1px; background:var(--border); margin:12px 0;"></div>
+            </div>
+            <div style="margin-top: auto; font-size:0.85rem; color:var(--text-secondary);">
+                <i class="fas fa-circle" style="color:var(--main-green); font-size: 0.5rem;"></i> v2.0 · glass
+            </div>
+        </aside>
+
+        <main class="main-content" id="mainContent">
+            <div class="page active-page" id="login">
+                <div class="auth-container">
+                    <div class="auth-card">
+                        <h2 style="color: var(--deep-green);">Login</h2>
+                        <p style="margin-bottom: 2rem; color: var(--text-secondary);">access your dashboard</p>
+                        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                            <input type="email" placeholder="Email"
+                                style="padding: 14px 20px; border-radius: 60px; border: 1px solid var(--border); background: rgba(255,255,255,0.6);">
+                            <input type="password" placeholder="Password"
+                                style="padding: 14px 20px; border-radius: 60px; border: 1px solid var(--border); background: rgba(255,255,255,0.6);">
+                            <button class="btn btn-primary" style="justify-content: center;"
+                                onclick="navigateTo('student-dash')"><i class="fas fa-arrow-right"></i> Login as student
+                                (demo)</button>
+                            <button class="btn btn-outline-green" style="justify-content: center;"
+                                onclick="navigateTo('teacher-dash')"><i class="fas fa-chalkboard"></i> Login as
+                                teacher</button>
+                            <button class="btn btn-outline-green" style="justify-content: center;"
+                                onclick="navigateTo('admin-dash')"><i class="fas fa-lock"></i> Login as admin</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
