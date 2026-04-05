@@ -1,3 +1,4 @@
+/* ----- GLOBAL RESET & VARIABLES (color palette exactly as requested) ----- */
 * {
     margin: 0;
     padding: 0;
@@ -17,6 +18,7 @@
     --success: #22C55E;
     --warning: #F59E0B;
     --error: #EF4444;
+
     --sidebar-width: 260px;
     --glass-bg: rgba(255, 255, 255, 0.68);
     --glass-border: rgba(227, 230, 229, 0.4);
@@ -32,6 +34,7 @@ body {
     min-height: 100vh;
 }
 
+/* glass-card pattern (modern) */
 .glass-card {
     background: var(--glass-bg);
     backdrop-filter: blur(12px) saturate(180%);
@@ -87,11 +90,13 @@ button,
     background: rgba(25, 135, 84, 0.04);
 }
 
+/* layout flex */
 .app-wrapper {
     display: flex;
     min-height: 100vh;
 }
 
+/* sidebar (glass) */
 .sidebar {
     width: var(--sidebar-width);
     background: var(--glass-bg);
@@ -161,6 +166,7 @@ button,
     overflow-y: auto;
 }
 
+/* page header */
 .page-header {
     margin-bottom: 2.5rem;
     display: flex;
@@ -168,6 +174,7 @@ button,
     align-items: center;
 }
 
+/* auth cards (centered) */
 .auth-container {
     display: flex;
     justify-content: center;
@@ -184,6 +191,7 @@ button,
     border: 1px solid var(--glass-border);
 }
 
+/* dashboard grid */
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -238,6 +246,7 @@ button,
     color: var(--error);
 }
 
+/* OTP input area */
 .otp-box {
     background: rgba(255, 255, 255, 0.6);
     border: 2px dashed var(--main-green);
@@ -256,6 +265,7 @@ button,
     text-align: center;
 }
 
+/* hide/show pages logic left in just in case, though handled by separate files now */
 .page {
     display: none;
 }
@@ -264,6 +274,7 @@ button,
     display: block;
 }
 
+/* for demo OTP */
 .demo-otp {
     background: var(--yellow-highlight);
     color: #1e1e1e;
