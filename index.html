@@ -21,13 +21,14 @@
         <i class="fas fa-qrcode"></i>
         <span>KLD</span>
       </div>
-      <div class="nav-links" id="sidebarNav">
-        <div class="nav-item" data-page="home"><i class="fas fa-home"></i> Home</div>
-        <div class="nav-item" data-page="login"><i class="fas fa-sign-in-alt"></i> Login</div>
-        <div class="nav-item" data-page="register"><i class="fas fa-user-plus"></i> Register</div>
-        <div class="nav-item" data-page="about"><i class="fas fa-info-circle"></i> About</div>
-        <div style="height:1px; background:var(--border); margin:12px 0;"></div>
-      </div>
+          <div class="nav-links" id="sidebarNav">
+            <div class="nav-item" data-page="home"><i class="fas fa-home"></i> Home</div>
+            <div class="nav-item" data-page="login"><i class="fas fa-sign-in-alt"></i> Login</div>
+            <div class="nav-item" data-page="register"><i class="fas fa-user-plus"></i> Register</div>
+            <div class="nav-item" data-page="about"><i class="fas fa-info-circle"></i> About</div>
+            <div style="height:1px; background:var(--border); margin:12px 0;"></div>
+          </div>
+        
       <div style="margin-top: auto; font-size:0.85rem; color:var(--text-secondary);">
         <i class="fas fa-circle" style="color:var(--main-green); font-size: 0.5rem;"></i> v1.0 · glass
       </div>
@@ -36,6 +37,8 @@
     <main class="main-content" id="mainContent">
       <div class="page active-page" id="home">
         <div class="page-header">
+          <button id="menu-btn" class="menu-btn">☰</button>
+          <div id="overlay" class="overlay"></div>
           <h1>Welcome to KLD <span style="color:var(--main-green);">Attend!</span></h1>
           <button class="btn btn-primary" onclick="navigateTo('login')"><i class="fas fa-right-to-bracket"></i>
             Login</button>
