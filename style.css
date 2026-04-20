@@ -283,3 +283,72 @@ button,
     font-weight: 700;
     letter-spacing: 2px;
 }
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    :root {
+        --sidebar-width: 220px;
+    }
+
+    .main-content {
+        padding: 15px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    /* Sidebar hidden by default */
+    .sidebar {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        width: var(--sidebar-width);
+        height: 100%;
+        z-index: 1000;
+        transition: 0.3s;
+    }
+
+    /* When active */
+    .sidebar.active {
+        left: 0;
+    }
+
+    /* Overlay effect */
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.4);
+        display: none;
+        z-index: 900;
+    }
+
+    .overlay.active {
+        display: block;
+    }
+
+    /* Make content full width */
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+.menu-btn {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+    display: none;
+}
+
+/* Show button only on mobile */
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block;
+    }
+}
