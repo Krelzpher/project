@@ -352,3 +352,228 @@ button,
         display: block;
     }
 }
+
+/* ==========================================
+   CUSTOM TOAST NOTIFICATIONS
+   ========================================== */
+#toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toast-msg {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border-left: 4px solid var(--main-green);
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-glass);
+    color: var(--text-primary);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 250px;
+    transform: translateX(120%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.toast-msg.show {
+    transform: translateX(0);
+}
+
+/* Color variations based on message type */
+.toast-msg.error {
+    border-left-color: var(--error);
+}
+
+.toast-msg.success {
+    border-left-color: var(--success);
+}
+
+.toast-msg i {
+    font-size: 1.2rem;
+}
+.toast-msg.error i { color: var(--error); }
+.toast-msg.success i { color: var(--success); }
+.toast-msg.info i { color: var(--main-green); }
+
+/* ==========================================
+   CUSTOM TOAST NOTIFICATIONS (UPDATED PLACEMENT)
+   ========================================== */
+#toast-container {
+    position: fixed;
+    top: 30px; /* Distance from top */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Perfectly center it */
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the toasts inside the container */
+    gap: 10px;
+    pointer-events: none; /* Lets you click things underneath the invisible container */
+}
+
+.toast-msg {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border-left: 4px solid var(--main-green);
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    color: var(--text-primary);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 280px;
+    
+    /* New Animation: Drop down from top instead of sliding from right */
+    transform: translateY(-50px);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Adds a slight bounce */
+    pointer-events: auto; /* Re-enables clicking on the toast itself */
+}
+
+.toast-msg.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Color variations based on message type */
+.toast-msg.error { border-left-color: var(--error); }
+.toast-msg.success { border-left-color: var(--success); }
+.toast-msg i { font-size: 1.2rem; }
+.toast-msg.error i { color: var(--error); }
+.toast-msg.success i { color: var(--success); }
+.toast-msg.info i { color: var(--main-green); }
+
+/* ==========================================
+   LOGOUT CONFIRMATION MODAL
+   ========================================== */
+#logout-modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4); backdrop-filter: blur(5px);
+    display: flex; align-items: center; justify-content: center;
+    z-index: 10000; opacity: 0; transition: opacity 0.3s ease;
+}
+
+#logout-modal-overlay.show { opacity: 1; }
+
+.logout-modal {
+    background: var(--glass-bg); border: 1px solid var(--glass-border);
+    padding: 30px; border-radius: 12px; box-shadow: var(--shadow-glass);
+    text-align: center; max-width: 400px; width: 90%;
+    transform: translateY(-20px); transition: transform 0.3s ease;
+}
+
+#logout-modal-overlay.show .logout-modal { transform: translateY(0); }
+
+.logout-modal h3 { margin-bottom: 10px; color: var(--text-primary); }
+.logout-modal p { margin-bottom: 25px; color: var(--text-secondary); font-weight: 500; }
+
+.logout-modal-actions { display: flex; gap: 15px; justify-content: center; }
+
+.logout-modal-actions button {
+    padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer;
+    font-weight: 600; transition: background 0.3s ease; color: white;
+}
+
+.btn-cancel { background: #888; }
+.btn-cancel:hover { background: #666; }
+.btn-confirm { background: var(--error, #e74c3c); }
+.btn-confirm:hover { background: #c0392b; }
+
+/* ==========================================
+   DASHBOARD HEADER & ICON TRAY
+   ========================================== */
+.dashboard-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    
+    /* 1. Glassmorphism Background */
+    background: var(--main-green, rgba(255, 255, 255, 0.6));
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    
+    /* 2. Slight shadow between header and body */
+    border-bottom: 1px solid var(--glass-border, rgba(255, 255, 255, 0.3));
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    
+    /* Responsive wrapping */
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* 3. The Different Colored Tray for Icons */
+.header-icon-tray {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    /* A subtle contrasting color for the tray (slightly dark transparent) */
+    background: var(--glass-bg); 
+    padding: 6px 16px;
+    border-radius: 30px; /* Pill shape */
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.03);
+}
+
+/* Adjusting the icons inside the tray */
+.header-icon-tray .icon-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    color: var(--deep-green, #2c3e50);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.header-icon-tray .icon-btn:hover {
+    background: rgba(0, 0, 0, 0.08); /* Darkens slightly when hovered */
+    transform: translateY(-2px);
+}
+
+/* Specific color for the logout button in the tray */
+.header-icon-tray .icon-logout {
+    color: var(--error, #e74c3c);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .dashboard-header {
+        padding: 15px 20px;
+        /* Keeps them side-by-side on mobile, but tightens spacing */
+        flex-direction: row; 
+    }
+    
+    /* Shrink titles on smaller screens so the tray still fits */
+    .dashboard-header h2 {
+        font-size: 1.2rem;
+    }
+
+    .header-icon-tray {
+        gap: 8px;
+        padding: 5px 12px;
+    }
+    
+    .header-icon-tray .icon-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+    }
+}

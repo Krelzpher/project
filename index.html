@@ -19,18 +19,17 @@
     <aside class="sidebar">
       <div class="logo-area">
         <i class="fas fa-qrcode"></i>
-        <span>KLD</span>
+        <span>KLD-<span style="color: var(--yellow-highlight);">A</span></span>
       </div>
-          <div class="nav-links" id="sidebarNav">
-            <div class="nav-item" data-page="home"><i class="fas fa-home"></i> Home</div>
-            <div class="nav-item" data-page="login"><i class="fas fa-sign-in-alt"></i> Login</div>
-            <div class="nav-item" data-page="register"><i class="fas fa-user-plus"></i> Register</div>
-            <div class="nav-item" data-page="about"><i class="fas fa-info-circle"></i> About</div>
-            <div style="height:1px; background:var(--border); margin:12px 0;"></div>
-          </div>
-        
-      <div style="margin-top: auto; font-size:0.85rem; color:var(--text-secondary);">
-        <i class="fas fa-circle" style="color:var(--main-green); font-size: 0.5rem;"></i> v1.0 · glass
+      <div class="nav-links" id="sidebarNav">
+        <div class="nav-item" data-page="home" onclick="navigateTo('home')"><i class="fas fa-home"></i> Home</div>
+        <div class="nav-item" data-page="about" onclick="navigateTo('about')"><i class="fas fa-info-circle"></i> About
+        </div>
+        <div class="nav-item" data-page="login" onclick="navigateTo('login')"><i class="fas fa-sign-in-alt"></i> Login
+        </div>
+        <div class="nav-item" data-page="register" onclick="navigateTo('register')"><i class="fas fa-user-plus"></i>
+          Register</div>
+        <div style="height:1px; background:var(--border); margin:12px 0;"></div>
       </div>
     </aside>
 
@@ -39,7 +38,8 @@
         <div class="page-header">
           <button id="menu-btn" class="menu-btn">☰</button>
           <div id="overlay" class="overlay"></div>
-          <h1>Welcome to KLD <span style="color:var(--main-green);">Attend!</span></h1>
+          <h1 style="color: var(--deep-green)">Welcome to KLD <span
+              style="color:var(--yellow-highlight);">Attend!</span></h1>
           <button class="btn btn-primary" onclick="navigateTo('login')"><i class="fas fa-right-to-bracket"></i>
             Login</button>
         </div>
@@ -48,10 +48,6 @@
           <h2 style="margin: 1rem 0 0.5rem;">Modern, Efficient, Logical Online Attendance System</h2>
           <p style="color: var(--text-secondary); max-width: 500px; margin: 0 auto;">multi-user friendly · OTP
             check‑in · real‑time insights</p>
-          <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2.5rem;">
-            <div class="badge success" style="background: var(--main-green); color:white;">#0F5132</div>
-            <div class="badge" style="background:var(--yellow-highlight); color:#1e1e1e;">#FFC107</div>
-          </div>
         </div>
       </div>
     </main>
